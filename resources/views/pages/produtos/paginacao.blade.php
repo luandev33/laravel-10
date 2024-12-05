@@ -12,7 +12,7 @@
      </form>
 
 
-     <h2>Section title</h2>
+    
      <div class="table-responsive small mt-4">
          @if ($findProduto->isEmpty())
              <p> Não Existe Dados</p>
@@ -34,7 +34,9 @@
 
                              <td>
                                  <a href="#" class="btn btn-light btn-sm">Editar</a>
-                                 <a href="#" class="btn btn-danger btn-sm">Excluir</a>
+
+                                 <meta name="csrf-token" content=" {{ csrf_token() }}" />
+                                 <a onclick="deleteRegistroPaginacao('{{route ('produto.delete')}}', {{ $produto->id }})" class="btn btn-danger btn-sm">Excluir</a>
                              </td>
 
                          </tr>
